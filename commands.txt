@@ -6,11 +6,77 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:11:41 by jcummins          #+#    #+#              #
-#    Updated: 2024/01/15 16:19:24 by jcummins         ###   ########.fr        #
+#    Updated: 2024/01/15 17:56:26 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 A helpful commands and files for the borntoberoot project, for lack of a notepad.
 
-su <user>		-		switch to a different user or root
+Apps to install of new debian system:
+	sudo
+	git							-	version control
+	vim							-	vim improved
+	ssh							-	secure shell host
+	ufw							-	uncomplicated firewall
+	pam_pwquality				-	password quality checker
+
+General app installation
+	apt-get update -y			-	updates list of available packages
+	apt-get upgrade -y			-	upgrades installed packages to newest version
+	apt install <app>			-	install <application>
+
+SSH config
+	apt install openssh-server
+	systemctl status ssh		-	check SSH server status
+	edit /etc/ssh/sshd_config	-	change port 22 to port <NUM> and uncomment
+	service ssh restart			-	restart SSH service
+
+Firewall config
+	apt-get install ufw
+	ufw enable					-	enable firewall
+	ufw	status numbered			-	check status
+	ufw	allow ssh				-	configure rules
+	ufw	allow <NUM>				-	configure port rules
+
+SSH connecting
+	- In VMBox set guest and host port on port forwarding to <NUM>
+	sudo systemctl restart ssh	-	restart ssh server
+	sudo service sshd status	-	check ssh status
+	- In host machine, connect with:
+		ssh <username>@localhost -p <port number>
+		exit to quit ssh connection
+
+Password Policy
+	sudo apt-get install libpam-pwquality
+	sudo vim /etc/pam.d/common-password
+	password	requisite	pam-pwquality.so <options>
+	retry=3
+	minlen=10					-	shortest possible password
+	ucredit=-1					-	requires at least one uppercase
+	lcredit=-1					-	requires at least one lowercase
+	dcredit=-1					-	requires at least one digit
+	maxrepeat=3					-	reject more than n consecutive characters
+	reject_username				-	cannot use username
+	difok=7						-	requires at least n changes from previous password
+	enforce_for_root
+
+/etc/login.defs
+	use this config file to change password policies:
+	PASS_MAX_DAYS 30			-	Password must be changed every 30 days
+	PASS_MIN_DAYS 2				-	Password must be kept for at least 2 days
+
+Creating Users
+	getent /etc/passwd			-	check all local users
+	sudo adduser <new username>	-	add new user
+	su <user>						-	switch to a different user or root
+	usermod -aG sudo <username>		-	add user to the sudo group
+	getent group sudo				-	list users in sudo group
+	sudo visudo						-	open sudoers file
+
+Creating sudo.log
+
+Changing Keymap
+	sudo loadkeys <code>			-	change to <code> layout like <us> or <en>
+	/etc/default/keyboard			-	contains default layout
+
 
