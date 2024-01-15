@@ -1,18 +1,16 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    README.txt                                         :+:      :+:    :+:    #
+#    commands.txt                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/11 14:41:42 by jcummins          #+#    #+#              #
-#    Updated: 2024/01/15 15:47:40 by jcummins         ###   ########.fr        #
+#    Created: 2024/01/15 16:11:41 by jcummins          #+#    #+#              #
+#    Updated: 2024/01/15 16:19:24 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-Disk encryption passphrase: btbrdc42
-Root password:				btbrrt42
-jcummins:					btbr42
+A helpful commands and files for the borntoberoot project, for lack of a notepad.
 
-user:	guest01
-pass:	GuestUser4242
+su <user>		-		switch to a different user or root
+
