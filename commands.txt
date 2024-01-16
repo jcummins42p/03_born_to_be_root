@@ -6,7 +6,7 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:11:41 by jcummins          #+#    #+#              #
-#    Updated: 2024/01/15 17:56:26 by jcummins         ###   ########.fr        #
+#    Updated: 2024/01/16 12:28:37 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ Firewall config
 	ufw	status numbered			-	check status
 	ufw	allow ssh				-	configure rules
 	ufw	allow <NUM>				-	configure port rules
+	ufw deny <NUM>				-	deny firewall
 
 SSH connecting
 	- In VMBox set guest and host port on port forwarding to <NUM>
@@ -79,4 +80,6 @@ Changing Keymap
 	sudo loadkeys <code>			-	change to <code> layout like <us> or <en>
 	/etc/default/keyboard			-	contains default layout
 
+Useful commands
+	ncdu	-	graphical file viewer, useful over ssh
 
