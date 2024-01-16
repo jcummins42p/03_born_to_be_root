@@ -6,7 +6,7 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:11:41 by jcummins          #+#    #+#              #
-#    Updated: 2024/01/16 12:28:37 by jcummins         ###   ########.fr        #
+#    Updated: 2024/01/16 17:12:22 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,35 @@ Creating sudo.log
 Changing Keymap
 	sudo loadkeys <code>			-	change to <code> layout like <us> or <en>
 	/etc/default/keyboard			-	contains default layout
+Permanently
+	sudo dpkg-reconfigure keyboard-configuration
+	setupcon
+	sudo update-initramfs -u
 
 Useful commands
-	ncdu	-	graphical file viewer, useful over ssh
+	ncdu		-	graphical file viewer, useful over ssh
+	wall		-	produces a command on the terminals of all users (write all)
+	who			-	shows who is currently logged in
+	free		-	memory usage
+	df			-
+	top			-	
+	hostname	-
+	ip			-	
+	journalctl	-
 
+Script commands:
+	architecture of os and kernel version	- uname -a
+	number of physical processors			- grep "physical id" /proc/cpuinfo | sort | uniq | wc -l
+	number of virtual processors			- grep "^processor" /proc/cpuinfo | wc -l
+	current available ram and utilization %	- free
+	current disk space and utilization %	-
+	current utilization of processors %		-
+	date and time of the last reboot		-
+	whether lvm is active					-
+	number of active connections			-
+	number of users using the server		-
+	IPv4 address and MAC address			- 
+	number of commands executed as sudo		-
+
+AWK stream editor
+	
