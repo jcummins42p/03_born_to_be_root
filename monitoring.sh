@@ -1,0 +1,7 @@
+#! /bin/bash
+
+wall (
+#Architecture:
+
+
+)
