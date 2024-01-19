@@ -15,7 +15,7 @@ echo "
 #LVM Active	: $(lsblk | awk '{tlvm="no"; if ($3=="lvm") tlvm="yes";} END {print tlvm}')
 #TCP Connections: $(ss -neopt state ESTABLISHED | wc -l) ESTABLISHED
 #User log	: $(users | wc -l)
-#Network	:
-#Sudo		: $(journalctl | awk /COMMAND/ | wc -l)
+#Network	: IP $(hostname -I) ($(ip link show | awk '/ether/ {print $2}'))
+#Sudo		: $(journalctl | awk /COMMAND/ | wc -l) cmd
 "
 
