@@ -6,7 +6,7 @@
 #    By: jcummins <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 16:11:41 by jcummins          #+#    #+#              #
-#    Updated: 2024/01/16 17:12:22 by jcummins         ###   ########.fr        #
+#    Updated: 2024/01/23 14:48:05 by jcummins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,4 +110,41 @@ Script commands:
 	number of commands executed as sudo		-
 
 AWK stream editor
+
+-	-	-	-	-	-	-	- BONUS -	-	-	-	-	-	-	-
+
+install php
+install lighttpd
+	sudo apt purge apache2
+	sudo apt install lighttpd
+	sudo systemctl start lighttpd
+	sudo systemctl enable lighttpd
+	sudo systemctl status lighttpd
+
+sudo ufw allow http
+
+forward host port 8080 to guest port 80 in VB
+
+Activate lighttpd FastCGI module
+	sudo lighty-enable-mod fastcgi
+	sudo lighty-enable-mod fastcgi-php
+	sudo service lighttpd force-reload
+
+create a file in /var/www/html named info.php:
+	<?php
+	phpinfo();
+	?>
+
+	view this at http://localhost:8080/info.php
+
+Install MariaDB
+	sudo apt install maridb-server
+	sudo systemctl start mariadb
+	sudo systemctl enable mariadb
+	sudo mysql_secure_installation
+	sudo systemctl restart mariadb
+
+Enter Mariadb
+	mysql -u root -p
+	create database
 	
